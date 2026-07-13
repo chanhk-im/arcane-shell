@@ -169,7 +169,11 @@ class ScriptHost {
   private answerApi(): void {
     if (!this.control || !this.data) return;
     const reqLen = Atomics.load(this.control, CTRL_REQ_LEN);
-    const payload = this.decoder.decode(this.data.subarray(0, reqLen));
+    // TextDecoder.decode() rejects any ArrayBufferView backed by a
+    // SharedArrayBuffer (browsers disallow decoding memory another thread
+    // could mutate mid-read) — .slice() copies into a fresh, non-shared
+    // buffer first; .subarray() would still be a shared view and throw.
+    const payload = this.decoder.decode(this.data.slice(0, reqLen));
     const sep = payload.indexOf(REQ_SEP);
     const method = sep >= 0 ? payload.slice(0, sep) : payload;
     const argJson = sep >= 0 ? payload.slice(sep + 1) : 'null';

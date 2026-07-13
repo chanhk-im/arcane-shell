@@ -55,7 +55,9 @@ function callMain(method: string, argJson: string): string {
   // Block this worker thread until the main thread flips CTRL_FLAG to 1.
   Atomics.wait(control, CTRL_FLAG, 0);
   const respLen = Atomics.load(control, CTRL_RESP_LEN);
-  return decoder.decode(data.subarray(0, respLen));
+  // See scriptHost.ts's answerApi(): TextDecoder.decode() rejects a
+  // SharedArrayBuffer-backed view, so copy out via .slice() first.
+  return decoder.decode(data.slice(0, respLen));
 }
 
 // A real sleep: parks the worker thread up to `ms` (no busy spin) and resets the
