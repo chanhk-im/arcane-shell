@@ -1,0 +1,332 @@
+[
+  {
+    "depth": 1,
+    "rank": 1,
+    "grade": 1,
+    "baseCost": 10
+  },
+  {
+    "depth": 2,
+    "rank": 1,
+    "grade": 1,
+    "baseCost": 14
+  },
+  {
+    "depth": 3,
+    "rank": 1,
+    "grade": 1,
+    "baseCost": 19.6
+  },
+  {
+    "depth": 4,
+    "rank": 1,
+    "grade": 1,
+    "baseCost": 27.44
+  },
+  {
+    "depth": 5,
+    "rank": 1,
+    "grade": 1,
+    "baseCost": 38.416
+  },
+  {
+    "depth": 6,
+    "rank": 1,
+    "grade": 1,
+    "baseCost": 53.7824
+  },
+  {
+    "depth": 7,
+    "rank": 1,
+    "grade": 1,
+    "baseCost": 75.29536
+  },
+  {
+    "depth": 8,
+    "rank": 1,
+    "grade": 1,
+    "baseCost": 105.413504
+  },
+  {
+    "depth": 9,
+    "rank": 1,
+    "grade": 1,
+    "baseCost": 147.5789056
+  },
+  {
+    "depth": 10,
+    "rank": 1,
+    "grade": 1,
+    "baseCost": 206.61046784
+  },
+  {
+    "depth": 11,
+    "rank": 2,
+    "grade": 1,
+    "baseCost": 376.0310514688
+  },
+  {
+    "depth": 12,
+    "rank": 2,
+    "grade": 1,
+    "baseCost": 526.44347205632
+  },
+  {
+    "depth": 13,
+    "rank": 2,
+    "grade": 1,
+    "baseCost": 737.020860878848
+  },
+  {
+    "depth": 14,
+    "rank": 2,
+    "grade": 1,
+    "baseCost": 1031.82920523039
+  },
+  {
+    "depth": 15,
+    "rank": 2,
+    "grade": 1,
+    "baseCost": 1444.56088732254
+  },
+  {
+    "depth": 16,
+    "rank": 3,
+    "grade": 2,
+    "baseCost": 20
+  },
+  {
+    "depth": 17,
+    "rank": 3,
+    "grade": 2,
+    "baseCost": 34
+  },
+  {
+    "depth": 18,
+    "rank": 3,
+    "grade": 2,
+    "baseCost": 57.8
+  },
+  {
+    "depth": 19,
+    "rank": 3,
+    "grade": 2,
+    "baseCost": 98.26
+  },
+  {
+    "depth": 20,
+    "rank": 3,
+    "grade": 2,
+    "baseCost": 167.042
+  },
+  {
+    "depth": 21,
+    "rank": 4,
+    "grade": 2,
+    "baseCost": 369.16282
+  },
+  {
+    "depth": 22,
+    "rank": 4,
+    "grade": 2,
+    "baseCost": 627.576794
+  },
+  {
+    "depth": 23,
+    "rank": 4,
+    "grade": 2,
+    "baseCost": 1066.8805498
+  },
+  {
+    "depth": 24,
+    "rank": 4,
+    "grade": 2,
+    "baseCost": 1813.69693466
+  },
+  {
+    "depth": 25,
+    "rank": 4,
+    "grade": 2,
+    "baseCost": 3083.284788922
+  },
+  {
+    "depth": 26,
+    "rank": 5,
+    "grade": 3,
+    "baseCost": 30
+  },
+  {
+    "depth": 27,
+    "rank": 5,
+    "grade": 3,
+    "baseCost": 60
+  },
+  {
+    "depth": 28,
+    "rank": 5,
+    "grade": 3,
+    "baseCost": 120
+  },
+  {
+    "depth": 29,
+    "rank": 5,
+    "grade": 3,
+    "baseCost": 240
+  },
+  {
+    "depth": 30,
+    "rank": 5,
+    "grade": 3,
+    "baseCost": 480
+  },
+  {
+    "depth": 31,
+    "rank": 6,
+    "grade": 3,
+    "baseCost": 1248
+  },
+  {
+    "depth": 32,
+    "rank": 6,
+    "grade": 3,
+    "baseCost": 2496
+  },
+  {
+    "depth": 33,
+    "rank": 6,
+    "grade": 3,
+    "baseCost": 4992
+  },
+  {
+    "depth": 34,
+    "rank": 6,
+    "grade": 3,
+    "baseCost": 9984
+  },
+  {
+    "depth": 35,
+    "rank": 6,
+    "grade": 3,
+    "baseCost": 19968
+  },
+  {
+    "depth": 36,
+    "rank": 7,
+    "grade": 4,
+    "baseCost": 40
+  },
+  {
+    "depth": 37,
+    "rank": 7,
+    "grade": 4,
+    "baseCost": 90
+  },
+  {
+    "depth": 38,
+    "rank": 7,
+    "grade": 4,
+    "baseCost": 202.5
+  },
+  {
+    "depth": 39,
+    "rank": 7,
+    "grade": 4,
+    "baseCost": 455.625
+  },
+  {
+    "depth": 40,
+    "rank": 7,
+    "grade": 4,
+    "baseCost": 1025.15625
+  },
+  {
+    "depth": 41,
+    "rank": 8,
+    "grade": 4,
+    "baseCost": 2998.58203125
+  },
+  {
+    "depth": 42,
+    "rank": 8,
+    "grade": 4,
+    "baseCost": 6746.8095703125
+  },
+  {
+    "depth": 43,
+    "rank": 8,
+    "grade": 4,
+    "baseCost": 15180.3215332031
+  },
+  {
+    "depth": 44,
+    "rank": 8,
+    "grade": 4,
+    "baseCost": 34155.723449707
+  },
+  {
+    "depth": 45,
+    "rank": 8,
+    "grade": 4,
+    "baseCost": 76850.3777618408
+  },
+  {
+    "depth": 46,
+    "rank": 9,
+    "grade": 5,
+    "baseCost": 50
+  },
+  {
+    "depth": 47,
+    "rank": 9,
+    "grade": 5,
+    "baseCost": 125
+  },
+  {
+    "depth": 48,
+    "rank": 9,
+    "grade": 5,
+    "baseCost": 312.5
+  },
+  {
+    "depth": 49,
+    "rank": 9,
+    "grade": 5,
+    "baseCost": 781.25
+  },
+  {
+    "depth": 50,
+    "rank": 9,
+    "grade": 5,
+    "baseCost": 1953.125
+  },
+  {
+    "depth": 51,
+    "rank": 10,
+    "grade": 5,
+    "baseCost": 6347.65625
+  },
+  {
+    "depth": 52,
+    "rank": 10,
+    "grade": 5,
+    "baseCost": 15869.140625
+  },
+  {
+    "depth": 53,
+    "rank": 10,
+    "grade": 5,
+    "baseCost": 39672.8515625
+  },
+  {
+    "depth": 54,
+    "rank": 10,
+    "grade": 5,
+    "baseCost": 99182.12890625
+  },
+  {
+    "depth": 55,
+    "rank": 10,
+    "grade": 5,
+    "baseCost": 247955.322265625
+  }
+]
