@@ -1,3 +1,52 @@
+<!-- Generated: 2026-07-13 | Updated: 2026-07-13 -->
+
+# arcane-shell
+
+## Purpose
+Arcane Shell is a CLI-terminal-styled, tick-based incremental/idle wizard game built with React 18 + Vite + TypeScript + Zustand. The player casts spells against tiered monsters, invests mana stones into a 55-depth "Arcana Tree", and can automate play by writing JavaScript run inside a sandboxed Web Worker. Game design is fully spec'd in `docs/` (8-document package); this repo is the implementation, currently at Milestone 1 (Rank 0-1 slice: 5 monster tiers, tree depths 1-10, 6 elemental deal skills + 3 buffs, script sandbox).
+
+## Key Files
+| File | Description |
+|------|-------------|
+| `package.json` | Scripts: `dev`, `build` (tsc + vite build), `test` (vitest), `extract-xlsx` |
+| `vite.config.ts` | Sets COOP/COEP headers (required for `SharedArrayBuffer`, used by the script sandbox bridge) |
+| `tsconfig.json` / `tsconfig.node.json` | Strict TypeScript config |
+| `index.html` | Vite entry HTML |
+
+## Subdirectories
+| Directory | Purpose |
+|-----------|---------|
+| `docs/` | Design spec package (master spec, UI spec, script API spec, balance spreadsheets) — the source of truth for game numbers (see `docs/AGENTS.md`) |
+| `scripts/` | One-off Node scripts, e.g. the xlsx→JSON balance extractor (see `scripts/AGENTS.md`) |
+| `src/` | Application source (see `src/AGENTS.md`) |
+
+## For AI Agents
+
+### Working In This Directory
+- Read `CLAUDE.md` (Korean) first — it is the authoritative, hard-enforced development doctrine for this repo (component rules, Zustand store-splitting, selector discipline, big-number handling, script-sandbox constraints). This root `AGENTS.md` mirrors the same content below for non-Claude agents (e.g. Codex) and is kept in sync with `CLAUDE.md`.
+- This is a **tick-based idle game**: state updates ≥1/sec even off-screen. Never subscribe a component to a whole Zustand store; always use a selector (see `src/stores/AGENTS.md`).
+- Late-game numbers can exceed `Number.MAX_SAFE_INTEGER` — route all large-number handling through `src/types/BigNum.ts` and `src/game/formulas/formatNumber.ts`.
+- Balance numbers (damage coefficients, tree costs, mana costs) must never be hardcoded inline — they belong in `src/game/formulas/` or `src/game/data/` and must trace back to a specific section of a doc in `docs/` (see comments in existing formula files for the citation style, e.g. `// stats_summary.md §1`).
+
+### Testing Requirements
+- `npm test` runs Vitest (`*.test.ts` colocated with source, e.g. `src/game/formulas/formulas.test.ts`, `src/game/integration.test.ts`, `src/game/script/sandbox.test.ts`)
+- `npm run build` (`tsc --noEmit && vite build`) must pass — strict TypeScript, no `any`
+
+### Common Patterns
+- Pure calculation lives in `src/game/formulas/`; components only import and display.
+- The script sandbox never exposes stores directly — only a whitelisted API surface (`src/game/script/prelude.ts` + `scriptHost.ts` dispatch table).
+
+## Dependencies
+
+### External
+- React 18, react-dom, react-router-dom 6 — UI
+- zustand 4 (+ `zustand/middleware` persist, `zustand/react/shallow`) — state
+- js-interpreter — AST-walking JS interpreter used for the script sandbox (no `eval`/`new Function`)
+- vitest, jsdom — testing
+- xlsx — parses the balance spreadsheets in `docs/` via `scripts/extract-xlsx.mjs`
+
+<!-- MANUAL: Original project development principles (Korean) preserved below. Keep in sync with CLAUDE.md at the repo root. -->
+
 # AGENTS.md — Arcane Shell (React)
 
 이 문서는 Codex가 이 저장소에서 작업할 때 따라야 할 개발 원칙입니다. 게임 설계 자체는 `docs/arcane_shell_master_spec.md` 등 설계 문서 패키지를 참조하세요.
